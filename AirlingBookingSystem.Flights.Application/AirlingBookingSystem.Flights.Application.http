@@ -1,0 +1,6 @@
+@AirlingBookingSystem.Flights.Application_HostAddress = http://localhost:5218
+
+GET {{AirlingBookingSystem.Flights.Application_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
