@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AirlineBookingSystem.Booking.Core\AirlineBookingSystem.Bookings.Core.csproj" />
+    <ProjectReference Include="..\AirlineBookingSystem.Booking.Core\AirlineBookingSystem.Booking.Core.csproj" />
   </ItemGroup>
 
 </Project>

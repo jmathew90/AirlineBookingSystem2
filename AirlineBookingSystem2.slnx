@@ -4,10 +4,10 @@
   <Folder Name="/BuildingBlocks/Contracts/" />
   <Folder Name="/Services/" />
   <Folder Name="/Services/Bookings/">
-    <Project Path="AirlineBookingSystem.Booking.Api/AirlineBookingSystem.Bookings.Api.csproj" />
-    <Project Path="AirlineBookingSystem.Booking.Application/AirlineBookingSystem.Bookings.Application.csproj" />
-    <Project Path="AirlineBookingSystem.Booking.Core/AirlineBookingSystem.Bookings.Core.csproj" />
-    <Project Path="AirlineBookingSystem.Booking.Infrastructure/AirlineBookingSystem.Bookings.Infrastructure.csproj" />
+    <Project Path="AirlineBookingSystem.Booking.Api/AirlineBookingSystem.Booking.Api.csproj" />
+    <Project Path="AirlineBookingSystem.Booking.Application/AirlineBookingSystem.Booking.Application.csproj" />
+    <Project Path="AirlineBookingSystem.Booking.Core/AirlineBookingSystem.Booking.Core.csproj" />
+    <Project Path="AirlineBookingSystem.Booking.Infrastructure/AirlineBookingSystem.Booking.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/Services/Fligth/">
     <Project Path="AirlineBookingSystem.Flight.Api/AirlineBookingSystem.Flight.Api.csproj" />

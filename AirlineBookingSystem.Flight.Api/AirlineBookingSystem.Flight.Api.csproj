@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AirlineBookingSystem.Flight.Application\AirlineBookingSystem.Flight.Application.csproj" />
+    <ProjectReference Include="..\AirlineBookingSystem.Flight.Core\AirlineBookingSystem.Flight.Core.csproj" />
+    <ProjectReference Include="..\AirlineBookingSystem.Flight.Infrastructure\AirlineBookingSystem.Flight.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

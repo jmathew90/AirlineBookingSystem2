@@ -21,7 +21,8 @@ namespace AirlineBookingSystem.Bookings.Infrastructure.Repositories
         public async Task<Booking> GetBookingAsync(int Id)
         {
             const string sql = "Select * from Booking where Id = @Id";
-            return await _dbConnection.QueryFirstOrDefaultAsync<Booking>(sql,new {Id = Id});
+            Booking ?bookings = await _dbConnection.QueryFirstOrDefaultAsync<Booking>(sql,new {Id = Id});
+            return bookings!;
         }
     }
 }

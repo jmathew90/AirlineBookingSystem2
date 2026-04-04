@@ -1,4 +1,4 @@
-﻿namespace AirlineBookingSystem.Booking.Application
+﻿namespace AirlineBookingSystem.Bookings.Application
 {
     public class Class1
     {
