@@ -1,0 +1,23 @@
+using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using AirlineBookingSystem.Notification.Application.Commands;
+namespace AirlineBookingSystem.Notification.Api.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class NotificationController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+        public NotificationController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendNotification([FromBody] SendNotificationCommand command)
+        {
+            await _mediator.Send(command);
+            return Ok();
+        }
+    }
+}

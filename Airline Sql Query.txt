@@ -1,0 +1,88 @@
+USE [AirlineBookingSystem]
+GO
+/****** Object:  Table [dbo].[Bookings]    Script Date: 1/10/2025 10:31:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Bookings](
+	[Id] INT  IDENTITY(1,1),
+	[FlightId] [INT] NULL,
+	[PassengerName] [nvarchar](100) NULL,
+	[SeatNumber] [nvarchar](10) NULL,
+	[BookingDate] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Flights]    Script Date: 1/10/2025 10:31:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Flights](
+	[Id] [INT] NOT NULL,
+	[FlightNumber] [nvarchar](50) NULL,
+	[Origin] [nvarchar](50) NULL,
+	[Destination] [nvarchar](50) NULL,
+	[DepartureTime] [datetime] NULL,
+	[ArrivalTime] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Notifications]    Script Date: 1/10/2025 10:31:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Notifications](
+	[Id] INT NOT NULL,
+	[Recipient] [nvarchar](100) NULL,
+	[Message] [nvarchar](max) NULL,
+	[Type] [nvarchar](50) NULL,
+	[SentAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Payments]    Script Date: 1/10/2025 10:31:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Payments](
+	[Id] [INT] NOT NULL,
+	[BookingId] [INT] NULL,
+	[Amount] [decimal](18, 2) NULL,
+	[PaymentDate] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[Bookings] ([Id], [FlightId], [PassengerName], [SeatNumber], [BookingDate]) VALUES (1,222, N'John Doe', N'12A', CAST(N'2025-01-10T22:28:06.183' AS DateTime))
+GO
+INSERT [dbo].[Bookings] ([FlightId], [PassengerName], [SeatNumber], [BookingDate]) VALUES (222, N'Jane Smith', N'7B', CAST(N'2025-01-10T22:28:06.183' AS DateTime))
+GO
+INSERT [dbo].[Flights] ([Id], [FlightNumber], [Origin], [Destination], [DepartureTime], [ArrivalTime]) VALUES (111, N'FL002', N'Chicago', N'Miami', CAST(N'2025-01-11T14:00:00.000' AS DateTime), CAST(N'2025-01-11T17:00:00.000' AS DateTime))
+GO
+INSERT [dbo].[Flights] ([Id], [FlightNumber], [Origin], [Destination], [DepartureTime], [ArrivalTime]) VALUES (222, N'FL001', N'New York', N'Los Angeles', CAST(N'2025-01-10T09:00:00.000' AS DateTime), CAST(N'2025-01-10T12:00:00.000' AS DateTime))
+GO
+INSERT [dbo].[Flights] ([Id], [FlightNumber], [Origin], [Destination], [DepartureTime], [ArrivalTime]) VALUES (333, N'FL003', N'San Francisco', N'Houston', CAST(N'2025-01-12T06:00:00.000' AS DateTime), CAST(N'2025-01-12T10:00:00.000' AS DateTime))
+GO
+INSERT [dbo].[Notifications] ([Id], [Recipient], [Message], [Type], [SentAt]) VALUES (777, N'jane.smith@example.com', N'Your payment was successful!', N'SMS', CAST(N'2025-01-10T22:28:06.190' AS DateTime))
+GO
+INSERT [dbo].[Notifications] ([Id], [Recipient], [Message], [Type], [SentAt]) VALUES (888, N'john.doe@example.com', N'Your booking is confirmed!', N'Email', CAST(N'2025-01-10T22:28:06.190' AS DateTime))
+GO
+INSERT [dbo].[Payments] ([Id], [BookingId], [Amount], [PaymentDate]) VALUES (901,1, CAST(200.00 AS Decimal(18, 2)), CAST(N'2025-01-10T22:28:06.190' AS DateTime))
+GO
+INSERT [dbo].[Payments] ([Id], [BookingId], [Amount], [PaymentDate]) VALUES (902, 2, CAST(150.00 AS Decimal(18, 2)), CAST(N'2025-01-10T22:28:06.190' AS DateTime))
+GO

@@ -9,15 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="9.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AirlineBookingSystem.Booking.Application\AirlineBookingSystem.Booking.Application.csproj" />
     <ProjectReference Include="..\AirlineBookingSystem.Booking.Core\AirlineBookingSystem.Booking.Core.csproj" />
     <ProjectReference Include="..\AirlineBookingSystem.Booking.Infrastructure\AirlineBookingSystem.Booking.Infrastructure.csproj" />
+    <ProjectReference Include="..\AirlineBookingSystem.BuildingBlocks\AirlineBookingSystem.BuildingBlocks.csproj" />
   </ItemGroup>
 
 </Project>

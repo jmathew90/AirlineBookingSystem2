@@ -9,7 +9,7 @@ namespace AirlineBookingSystem.Bookings.Core.Repositories
 {
     public interface IBookingRepository
     {
-        Task <Booking> GetBookingAsync(int id);
+        Task <Booking> GetBookingByIdAsync(int id);
         Task AddBookingsAsync(Booking booking);
     }
 }

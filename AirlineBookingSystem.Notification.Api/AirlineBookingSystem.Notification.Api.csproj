@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AirlineBookingSystem.Notification.Application\AirlineBookingSystem.Notification.Application.csproj" />
+    <ProjectReference Include="..\AirlineBookingSystem.Notification.Core\AirlineBookingSystem.Notification.Core.csproj" />
+    <ProjectReference Include="..\AirlineBookingSystem.Notification.Infrastructure\AirlineBookingSystem.Notification.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
