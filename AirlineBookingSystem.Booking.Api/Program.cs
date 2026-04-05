@@ -23,7 +23,7 @@ var assembly = new Assembly[] {
     typeof(GetBookingHandler).Assembly 
 };
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
